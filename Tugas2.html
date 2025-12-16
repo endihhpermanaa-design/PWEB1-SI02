@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Sederhana</title>
+</head>
+<body>
+
+    <h2>To-Do List</h2>
+
+    <input type="text" id="inputTugas" placeholder="Tulis tugas di sini">
+    <button onclick="tambahTugas()">Tambah</button>
+    <button onclick="hapusTerakhir()">Hapus Terakhir</button>
+
+    <ul id="daftarTugas"></ul>
+
+    <script>
+        function tambahTugas() {
+            let input = document.getElementById("inputTugas").value;
+
+            if (input === "") {
+                alert("Tugas tidak boleh kosong!");
+                return;
+            }
+
+            let liBaru = document.createElement("li");
+            liBaru.textContent = input;
+
+            document.getElementById("daftarTugas").appendChild(liBaru);
+
+            document.getElementById("inputTugas").value = "";
+        }
+
+        function hapusTerakhir() {
+            let daftar = document.getElementById("daftarTugas");
+            if (daftar.lastChild) {
+                daftar.removeChild(daftar.lastChild);
+            } else {
+                alert("Tidak ada tugas yang bisa dihapus!");
+            }
+        }
+    </script>
+
+</body>
+</html>

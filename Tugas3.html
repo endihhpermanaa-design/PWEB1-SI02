@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktif FAQ</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        .faq-item {
+        margin-bottom: 15px;
+    }
+        .question {
+            font-weight: bold;
+            padding: 7px;
+        }
+        .answer {
+            display: none ;
+            padding-left: 23px;
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Interaktif Faq</h2>
+    <div class="faq-item">
+        <div class="question">1.ada berapa rukun iman</div>
+        <div class="answer">rukun iman ada enam.</div>
+    
+        <div class="faq-item">
+            <div class="question">2. ada berapa rukun islam</div>
+            <dev class="answer">rukun islam ada lima</dev>
+        </div>
+        <div class="faq-item">
+            <div class="question">3.sebutkan nama 10 malaikat</div>
+            <div class="answer">jibril,mikail,israfil,izrail,munkar,nakir,roqib,atid,malik,ridwan</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">4.sebutkan 4 kitab yang wajib di ketahui yang di turunkan oleh Allah.swt</div>
+            <div class="answer">taurot,zabur,injil,Al-quran</div>
+        </div>
+       <div class="faq-item">
+        <div class="question">5.Ada berapakah nama-nama Allah.swt</div>
+        <div class="answer"> nama-nama allah ada 99 </div>
+       </div>
+
+       <script>
+        $(".question").click(function(){
+            $(this).next(".answer").toggle();
+        })
+        $(".question").hover(
+            function () { $(this).css("color","red");},
+            function () { $(this).css("color","blue");}
+    
+        )
+       </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Chaining Animation</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+
+        #triggerBtn {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #triggerBtn:hover {
+            background-color: #0056b3;
+        }
+
+        #notification {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            display: none;
+            padding: 20px 30px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+
+            transition: background-color 0.5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="triggerBtn">Tampilkan Notifikasi</button>
+
+    <div id="notification">
+        <strong>Sukses!</strong> kata mamah jangan lupa sholat lima waktu
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            $('#triggerBtn').on('click', function () {
+
+
+                $('#notification')
+                    .hide()
+                    .css('background-color', '#ffc107') 
+                    .fadeIn(800) 
+                    .slideDown(800) 
+                    .delay(3000)
+                    .slideUp(800) 
+                    .fadeOut(800); 
+
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
